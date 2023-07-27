@@ -1,27 +1,15 @@
-import { useState } from "react";
 
 const TasksContainer = ({ tasks }) => {
-	
-
-	const [crossed, setCrossed] = useState(false);
 	function deleteTask(id) {
-		fetch(`http://localhost:3000/todos/${id}`, {
+		fetch(`https://seshbackend.vercel.app/todos/${id}`, {
 			method: 'DELETE',
 		});
-	}
-
-	function crossOut(id) {
-		console.log(id);
 	}
 
 	return (
 		<ol>
 			{tasks.map((task) => (
-				<li
-					className="list"
-					key={task.id}
-					onDoubleClick={() => crossOut(task.id)}
-				>
+				<li className="list" key={task.id}>
 					<h1>{task.title}</h1>
 					<p
 						className={

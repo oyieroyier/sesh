@@ -11,7 +11,7 @@ const AddTasks = ({ setTasks }) => {
 
 		const newTask = { title, priority, status };
 
-		fetch('http://localhost:3000/todos', {
+		fetch('https://seshbackend.vercel.app/todos', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newTask),

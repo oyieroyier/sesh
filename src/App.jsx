@@ -8,7 +8,7 @@ export default function App() {
 	const [tasks, setTasks] = useState([]);
 
 	useEffect(() => {
-		axios.get('http://localhost:3000/todos').then((res) => {
+		axios.get('https://seshbackend.vercel.app/todos').then((res) => {
 			setTasks(res.data);
 		});
 	}, [tasks]);
